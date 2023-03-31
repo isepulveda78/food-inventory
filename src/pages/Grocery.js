@@ -11,7 +11,7 @@ const Grocery = () => {
             </div>
             <div className='col-md-8'>
                     <div className="text-end mb-1">
-                        <Button path="/addGrocery" name={'Add to Inventory'} />
+                        <Button path="/addGrocery" name={'Add to Grocery List'} />
                     </div>
                <GroceryList />
             </div>

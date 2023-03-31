@@ -47,7 +47,10 @@ const FoodInventory = () => {
                       <td>{food.units}</td>
                       <td>{food.location}</td>
                       <td><Moment format="MM/DD/YYYY" date={food.date} /></td>
-                      <td><Link className="badge text-bg-primary" to={`/updateFood/${food._id}`}>Update</Link> <button className="badge text-bg-danger" onClick={()=> deleteFood(food._id)}>Delete</button></td>
+                      <td><Link className="badge text-bg-primary" to={`/updateFood/${food._id}`}>Update</Link> 
+                      <button className="badge text-bg-danger" onClick={()=> deleteFood(food._id)}>Delete</button>
+                      <Link className="badge text-bg-warning" to={`/inventory/${food._id}`}>View</Link>
+                      </td>
                     </tr>
                     ))
                     }

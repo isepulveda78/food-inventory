@@ -8,6 +8,7 @@ import AddFood from './pages/AddFood'
 import UpdateFood from './pages/UpdateFood'
 import AddGrocery from './pages/AddGrocery'
 import UpdateGrocery from './pages/UpdateGrocery'
+import Inventory from './pages/Inventory'
 import { Toaster } from 'react-hot-toast'
 
 function App() {
@@ -19,9 +20,11 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route exact path="/grocery" component={Grocery} />
       <Route exact path="/addFood" component={AddFood} />
+      <Route exact path="/addFood" component={AddFood} />
       <Route exact path="/updateFood/:id" component={UpdateFood} />
       <Route exact path="/addGrocery" component={AddGrocery} />
       <Route exact path="/updateGrocery/:id" component={UpdateGrocery} />
+      <Route exact path="/inventory/:id" component={Inventory} />
     </Switch>
   </Router>
   )

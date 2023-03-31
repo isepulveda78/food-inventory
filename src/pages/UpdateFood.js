@@ -48,7 +48,7 @@ const UpdateFood = ({history}) => {
                 setLocation("")
                 setDate("")
                 toast('Item updated')
-                history.push('/')
+                history.push('/grocery')
             }
         } 
     

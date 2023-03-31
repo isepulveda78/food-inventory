@@ -40,7 +40,7 @@ const UpdateGrocery = ({history}) => {
                 setQuantity("")
                 setUnits("")
                 toast('Item updated')
-                history.push('/')
+                history.push('/grocery')
             }
         } 
     

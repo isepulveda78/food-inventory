@@ -52,7 +52,7 @@ const UpdateInventory = ({history}) => {
                     </div>
                     <div className="card">
                         <div className="card-header">
-                            Update Food Inventory
+                            Replenish
                         </div>
                         <div className="card-body">
                             <form onSubmit={handleSumbit}>

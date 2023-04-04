@@ -43,7 +43,7 @@ const GroceryList = () => {
                       <th scope="row">{grocery.item}</th>
                       <td>{grocery.quantity}</td>
                       <td>{grocery.units}</td>
-                      <td><Link className="badge text-bg-primary" to={`/updateGrocery/${grocery._id}`}>Update</Link> <button className="badge text-bg-danger" onClick={()=> deleteGrocery(grocery._id)}>Delete</button></td>
+                      <td><Link className="badge text-bg-primary" to={`/updateGrocery/${grocery._id}`}>Update</Link> <div className="badge text-bg-danger text-decoration-underline" style={{cursor: "pointer"}} onClick={()=> deleteGrocery(grocery._id)}>Delete</div></td>
                     </tr>
                     ))
                     }

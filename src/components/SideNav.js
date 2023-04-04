@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
-const SideNav = ({history}) => {
+const SideNav = () => {
     const [food, setFood] = useState()
     const [grocery, setGrocery] = useState()
 

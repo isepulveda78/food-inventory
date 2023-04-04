@@ -1,9 +1,9 @@
-import {useState, useEffect, useMemo} from 'react'
+import {useState, useEffect} from 'react'
 import Button from '../components/Button'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
-import Moment from 'react-moment'
+
 const UpdateInventory = ({history}) => {
 
     const [item, setItem] = useState("")
@@ -17,11 +17,15 @@ const UpdateInventory = ({history}) => {
     const { id } = useParams()
 
     const getFood = async () => {
-        const res = await axios.get(`http://localhost:8000/api/foodinventory/${id}`)
-        const food = res.data
-        setItem(food.item)
-        setQuantity(food.quantity)
-        setUnits(food.units)
+        try {
+            const res = await axios.get(`http://localhost:8000/api/foodinventory/${id}`)
+            const food = res.data
+            setItem(food.item)
+            setQuantity(food.quantity)
+            setUnits(food.units)
+        } catch (error) {
+            console.log("Error: ", error)
+        }
     }
         
     const handleSumbit = (e) => {
@@ -32,14 +36,13 @@ const UpdateInventory = ({history}) => {
             quantity,
             units,
         })
-    
             if(data.error){
                 toast(data.error)
             }else{
                 setItem("")
                 setQuantity("")
                 setUnits("")
-                toast('Added to Inventory')
+                toast('Added to Grocery List')
                 history.push('/grocery')
             }
         } 

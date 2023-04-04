@@ -17,11 +17,15 @@ const UpdateGrocery = ({history}) => {
     const { id } = useParams()
 
     const getGrocery = async () => {
+      try {
         const res = await axios.get(`http://localhost:8000/api/grocerylist/${id}`)
         const grocery = res.data
         setItem(grocery.item)
         setQuantity(grocery.quantity)
         setUnits(grocery.units)
+      } catch (error) {
+        console.log("Error: ", error)
+      }
     }
         
     const handleSumbit = (e) => {

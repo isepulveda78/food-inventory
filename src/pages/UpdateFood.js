@@ -19,13 +19,17 @@ const UpdateFood = ({history}) => {
     const { id } = useParams()
 
     const getFood = async () => {
-        const res = await axios.get(`http://localhost:8000/api/foodinventory/${id}`)
-        const food = res.data
-        setItem(food.item)
-        setQuantity(food.quantity)
-        setUnits(food.units)
-        setLocation(food.location)
-        setDate(food.date)
+        try {
+            const res = await axios.get(`http://localhost:8000/api/foodinventory/${id}`)
+            const food = res.data
+            setItem(food.item)
+            setQuantity(food.quantity)
+            setUnits(food.units)
+            setLocation(food.location)
+            setDate(food.date)
+        } catch (error) {
+            console.log("Error: ", error)
+        }
     }
         
     const handleSumbit = (e) => {
